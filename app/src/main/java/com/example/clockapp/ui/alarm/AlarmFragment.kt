@@ -1,4 +1,4 @@
-package com.example.clockapp.ui.home
+package com.example.clockapp.ui.alarm
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.clockapp.databinding.FragmentHomeBinding
+import com.example.clockapp.databinding.FragmentAlarmBinding
 
-class HomeFragment : Fragment() {
+class AlarmFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentAlarmBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val alarmViewModel =
+            ViewModelProvider(this)[AlarmViewModel::class.java]
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentAlarmBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textAlarm
+        alarmViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

@@ -1,13 +1,15 @@
-package com.example.clockapp.ui.notifications
+package com.example.clockapp.ui.stopwatch
+
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class StopwatchViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "This is stopwatch Fragment"
     }
     val text: LiveData<String> = _text
+
 }
